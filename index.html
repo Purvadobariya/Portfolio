@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Purva Dobariya - Personal Portfolio. Computer Engineering Student, Python Developer, and AI & RAG Developer based in Rajkot, Gujarat, India.">
+  <meta name="keywords"
+    content="Purva Dobariya, Portfolio, Python Developer, Computer Engineering, Python Developer, AI, RAG, LangChain, Rajkot, B.H. Gardi, RaktSetu, Multimodal RAG">
+  <meta name="author" content="Purva Dobariya">
+  <title>Purva Dobariya | Python & AI Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22Inter, sans-serif%22 font-weight=%2280%22 fill=%22%25255C4033%22>PD</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Background Animated Orbs -->
+  <div class="bg-gradient-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#landing" class="logo" id="logo-pd" aria-label="Purva Dobariya Logo"><span>PD</span></a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#landing" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SECTIONS -->
+  <main>
+
+    <!-- SECTION 1: LANDING -->
+    <section id="landing">
+      <div class="container landing-grid">
+        <div class="hero-content animate-on-scroll delay-100">
+          <span class="hero-subtitle">Welcome to my Space</span>
+          <h1 class="hero-title">Purva Dobariya</h1>
+
+          <div class="designations-wrapper">
+            <span class="designation-badge"><i class="fa-solid fa-graduation-cap"></i> Computer Engineering
+              Student</span>
+            <span class="designation-badge"><i class="fa-solid fa-laptop-code"></i> Python Developer</span>
+            <span class="designation-badge"><i class="fa-solid fa-brain"></i> AI & RAG Developer</span>
+          </div>
+
+          <p class="hero-desc">
+            Computer Engineering student passionate about software development, web technologies, and artificial
+            intelligence. I enjoy learning new technologies and applying them through academic and personal projects.
+            Familiar with Python, PHP, JavaScript, SQL, HTML, and CSS, with experience building web applications and
+            AI-based projects. Strong problem-solving mindset with a willingness to learn and adapt to new challenges.
+            Seeking internship or entry-level opportunities to enhance my skills, gain practical experience, and
+            contribute to real world projects.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#about" class="btn btn-primary" id="btn-learn-more">Learn More About Me <i
+                class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contact" class="btn btn-secondary" id="btn-get-touch">Get In Touch <i
+                class="fa-solid fa-envelope"></i></a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Purva's GitHub Portfolio">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="Purva's LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:purvapatel470@gmail.com" class="social-icon" aria-label="Email Purva">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual animate-on-scroll delay-300">
+          <div class="dev-graphic-card">
+            <div class="card-header-dots">
+              <span class="dot dot-1"></span>
+              <span class="dot dot-2"></span>
+              <span class="dot dot-3"></span>
+            </div>
+            <div class="code-window">
+              <p><span class="code-keyword">const</span> developer = {</p>
+              <p>&nbsp;&nbsp;name: <span class="code-string">"Purva Dobariya"</span>,</p>
+              <p>&nbsp;&nbsp;role: <span class="code-string">"AI & Python Developer"</span>,</p>
+              <p>&nbsp;&nbsp;focus: [<span class="code-string">"RAG"</span>, <span
+                  class="code-string">"LangChain"</span>, <span class="code-string">"Web"</span>],</p>
+              <p>&nbsp;&nbsp;motto: <span class="code-string">"Solve real-world problems"</span></p>
+              <p>};</p>
+              <br>
+              <p class="code-comment">// Open to new challenges!</p>
+              <p>developer.connect();</p>
+            </div>
+            <span class="card-footer-badge">CE @ GTU</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT ME -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">A glimpse into my background, focus, and long-term aspirations</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-container animate-on-scroll slide-in-left">
+            <div class="profile-img-wrapper" id="profile-img-wrapper">
+              <img src="certificate/profile_photo.jpeg" alt="Purva Dobariya Profile Photo">
+            </div>
+            <div class="about-card-glow-border"></div>
+          </div>
+
+          <div class="about-details animate-on-scroll slide-in-right">
+            <p class="about-summary">
+              I am a Computer Engineering student with a strong interest in software development, artificial
+              intelligence, and modern web technologies. Throughout my academic journey, I have built practical projects
+              ranging from AI-powered RAG systems to full-stack web applications and analytics platforms.
+            </p>
+            <p class="about-summary">
+              My technical expertise includes Python, PHP, SQL, JavaScript, MySQL, LangChain, Vector Databases, and
+              modern development tools. I enjoy solving complex problems and transforming ideas into efficient,
+              scalable, and user-friendly software solutions.
+            </p>
+            <p class="about-summary">
+              My academic background has provided a solid foundation in data structures, database management systems,
+              operating systems, computer networks, and object-oriented programming. I continuously explore emerging
+              technologies and industry best practices to improve my skills.
+            </p>
+            <div class="mission-vision-grid">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>My Mission</h3>
+                    <span class="flip-hint">Click or Hover to Flip</span>
+                  </div>
+                  <div class="flip-card-back">
+                    <p>To develop innovative, scalable, and intelligent software solutions that solve real-world
+                      problems while continuously improving my technical expertise.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>My Vision</h3>
+                    <span class="flip-hint">Click or Hover to Flip</span>
+                  </div>
+                  <div class="flip-card-back">
+                    <p>To become a skilled Software Engineer and AI Specialist who contributes to impactful technology
+                      products that improve people's lives.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- SECTION 4: EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Academic foundations in Computer Engineering</p>
+        </div>
+
+        <div class="education-grid">
+          <!-- Card 1: BE -->
+          <div class="edu-card animate-on-scroll delay-100">
+            <div class="edu-header">
+              <div class="edu-title-group">
+                <h3>Bachelor of Engineering</h3>
+                <span class="edu-inst">B.H. Gardi College of Engineering & Technology (GTU)</span>
+              </div>
+              <div class="edu-badge-group">
+                <span class="edu-badge accent">2024 – Present</span>
+                <span class="edu-badge">Full-Time</span>
+              </div>
+            </div>
+            <ul class="edu-details">
+              <li><i class="fa-solid fa-check"></i><strong>Current CGPA:</strong> 7.87 / 10</li>
+              <li><i class="fa-solid fa-check"></i>Advanced studies in Computer Engineering.</li>
+              <li><i class="fa-solid fa-check"></i>Strong foundation in software development and AI technologies.</li>
+              <li><i class="fa-solid fa-location-dot"></i>Rajkot, Gujarat</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Diploma -->
+          <div class="edu-card animate-on-scroll delay-200">
+            <div class="edu-header">
+              <div class="edu-title-group">
+                <h3>Diploma in Computer Engineering</h3>
+                <span class="edu-inst">Noble Engineering College</span>
+              </div>
+              <div class="edu-badge-group">
+                <span class="edu-badge accent">2021 – 2024</span>
+                <span class="edu-badge">Full-Time</span>
+              </div>
+            </div>
+            <ul class="edu-details">
+              <li><i class="fa-solid fa-check"></i><strong>CGPA:</strong> 7.83 / 10</li>
+              <li><i class="fa-solid fa-check"></i>Developed programming and database fundamentals.</li>
+              <li><i class="fa-solid fa-check"></i>Built practical knowledge of computer systems and software
+                development.</li>
+              <li><i class="fa-solid fa-location-dot"></i>Junagadh, Gujarat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Explore my key academic and self-driven software projects</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+           <div class="project-panel animate-on-scroll" id="project-raktsetu">
+            <div class="project-visual">
+              <div class="project-visual-icon"><i class="fa-solid fa-droplet" style="color: #A0522D;"></i></div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">Full-Stack Web Application</span>
+              <h3 class="project-title">RaktSetu – Blood Donation System</h3>
+              <p class="project-desc">
+                A web-based platform that connects blood donors and recipients through an efficient management system
+                featuring donor registration, blood requests, and search capabilities.
+              </p>
+
+              <span class="project-bullets-title">Key Outcomes</span>
+              <ul class="project-bullets">
+                <li>Developed complete donor-recipient management workflow.</li>
+                <li>Implemented blood request and search functionalities.</li>
+                <li>Designed responsive user interfaces.</li>
+                <li>Optimized database performance and retrieval speed.</li>
+              </ul>
+
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">HTML</span>
+                <span class="project-tech-tag">CSS</span>
+                <span class="project-tech-tag">JavaScript</span>
+                <span class="project-tech-tag">PHP</span>
+                <span class="project-tech-tag">MySQL</span>
+                <span class="project-tech-tag">XAMPP</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-panel animate-on-scroll" id="project-rag">
+            <div class="project-visual">
+              <div class="project-visual-icon"><i class="fa-solid fa-brain"></i></div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">AI-Powered Retrieval-Augmented Generation System</span>
+              <h3 class="project-title">Multimodal RAG+</h3>
+              <p class="project-desc">
+                A multimodal AI application capable of processing PDFs, text documents, and images. The system combines
+                semantic search, vector databases, and large language models to deliver accurate context-aware
+                responses.
+              </p>
+
+              <span class="project-bullets-title">Key Outcomes</span>
+              <ul class="project-bullets">
+                <li>Implemented semantic search using embeddings.</li>
+                <li>Integrated vector databases for intelligent retrieval.</li>
+                <li>Built document chunking and retrieval pipelines.</li>
+                <li>Developed an interactive user interface for content querying.</li>
+              </ul>
+
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">LangChain</span>
+                <span class="project-tech-tag">Vector Database</span>
+                <span class="project-tech-tag">LLM APIs</span>
+                <span class="project-tech-tag">Streamlit</span>
+                <span class="project-tech-tag">FastAPI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-panel animate-on-scroll" id="project-insight">
+            <div class="project-visual">
+              <div class="project-visual-icon"><i class="fa-solid fa-chart-line"></i></div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">Analytics and Insight Management Platform</span>
+              <h3 class="project-title">InsightLoop</h3>
+              <p class="project-desc">
+                An intelligent analytics platform for collecting, processing, and visualizing user feedback and business
+                insights through automated reporting workflows.
+              </p>
+
+              <span class="project-bullets-title">Key Outcomes</span>
+              <ul class="project-bullets">
+                <li>Developed interactive analytics dashboards.</li>
+                <li>Automated data processing workflows.</li>
+                <li>Enabled trend and performance analysis.</li>
+                <li>Improved structured decision-making processes.</li>
+              </ul>
+
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">SQL</span>
+                <span class="project-tech-tag">Data Analytics</span>
+                <span class="project-tech-tag">Dashboard Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">My Skills</h2>
+          <p class="section-subtitle">Technical proficiencies mapped by category and capability percentages</p>
+        </div>
+
+        <div class="skills-container">
+          <!-- Programming & Databases -->
+          <div class="skill-category-card animate-on-scroll delay-100">
+            <h3 class="skill-category-title"><i class="fa-solid fa-code"></i> Programming & Databases</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">PHP</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">MySQL</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web Development -->
+          <div class="skill-category-card animate-on-scroll delay-200">
+            <h3 class="skill-category-title"><i class="fa-solid fa-laptop-code"></i> Web Technologies</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5</span>
+                  <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">CSS3</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Artificial Intelligence -->
+          <div class="skill-category-card animate-on-scroll delay-100">
+            <h3 class="skill-category-title"><i class="fa-solid fa-brain"></i> AI & Data Technologies</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Retrieval-Augmented Generation (RAG)</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">LangChain</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Vector Databases</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Prompt Engineering</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Development Tools -->
+          <div class="skill-category-card animate-on-scroll delay-200">
+            <h3 class="skill-category-title"><i class="fa-solid fa-screwdriver-wrench"></i> Development Tools</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">VS Code</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Git & GitHub</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">XAMPP</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Postman</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Figma</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Computer Science -->
+          <div class="skill-category-card animate-on-scroll delay-300" style="grid-column: span 2;">
+            <h3 class="skill-category-title"><i class="fa-solid fa-gears"></i> Computer Science Fundamentals</h3>
+            <div class="skills-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px;">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">DBMS (Database Management Systems)</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Object-Oriented Programming (OOP)</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Data Structures & Algorithms</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Operating Systems</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="grid-column: span 2;">
+                <div class="skill-info">
+                  <span class="skill-name">Computer Networks</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress-fill" data-percent="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">Verified professional and academic training credentials</p>
+        </div>
+
+        <div class="certifications-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card animate-on-scroll delay-100" data-src="certificate/PHP_certificate.png">
+            <div class="cert-image-wrapper">
+              <img src="certificate/PHP_certificate.png" alt="PHP Training Program Certificate">
+              <div class="cert-overlay">
+                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">PHP Training Program</h3>
+              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Institute of Advanced Research,
+                Gandhinagar</span>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card animate-on-scroll delay-200" data-src="certificate/Python_certificate.png">
+            <div class="cert-image-wrapper">
+              <img src="certificate/Python_certificate.png" alt="Python Programming Certificate">
+              <div class="cert-overlay">
+                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Python Programming</h3>
+              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Institute of Advanced Research,
+                Gandhinagar</span>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card animate-on-scroll delay-300" data-src="certificate/Hackathon_certificate.png">
+            <div class="cert-image-wrapper">
+              <img src="certificate/Hackathon_certificate.png" alt="Hackathon Participation Certificate">
+              <div class="cert-overlay">
+                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Hackathon Participation</h3>
+              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Rajkot Information Technology
+                Association</span>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card animate-on-scroll delay-400" data-src="certificate/Cricket_certificate.png">
+            <div class="cert-image-wrapper">
+              <img src="certificate/Cricket_certificate.png" alt="Cricket representation Certificate">
+              <div class="cert-overlay">
+                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              </div>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">GTU Pride – Cricket (Women)</h3>
+              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Gujarat Technological University
+                (GTU)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: ACHIEVEMENTS -->
+    <section id="achievements">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Achievements & Recognition</h2>
+          <p class="section-subtitle">"Academic excellence, project innovation, and continuous growth in software
+            development and artificial intelligence."</p>
+        </div>
+
+        <!-- Stats Banner -->
+        <div class="stats-banner animate-on-scroll">
+          <div class="stat-item">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Major Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Awards / Achievements</div>
+          </div>
+        </div>
+
+        <div class="achievements-grid">
+          <!-- Achievement 1 -->
+          <div class="achievement-card animate-on-scroll delay-100">
+            <span class="ach-category">Academic</span>
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
+            <h3>AI Project Development</h3>
+            <span class="ach-inst">B.H. Gardi College of Engineering & Technology</span>
+            <p class="ach-desc">
+              Developed advanced AI-powered projects utilizing RAG architecture and LLM technologies.
+            </p>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="achievement-card animate-on-scroll delay-200">
+            <span class="ach-category">Academic</span>
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
+            <h3>Multiple Full-Stack Applications</h3>
+            <span class="ach-inst">B.H. Gardi College of Engineering & Technology</span>
+            <p class="ach-desc">
+              Successfully built and deployed multiple full-stack web applications using modern development
+              technologies.
+            </p>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="achievement-card animate-on-scroll delay-300">
+            <span class="ach-category">Academic</span>
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
+            <h3>Strong Academic Performance</h3>
+            <span class="ach-inst">Computer Engineering Program</span>
+            <p class="ach-desc">
+              Maintained consistent academic performance throughout diploma and degree studies.
+            </p>
+          </div>
+
+          <!-- Achievement 4 -->
+          <div class="achievement-card cert-card animate-on-scroll delay-400"
+            data-src="certificate/Cricket_certificate.png" style="cursor: pointer;">
+            <span class="ach-category">Academic / Sports</span>
+            <span
+              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
+            <h3>GTU Pride – Women's Cricket Representation</h3>
+            <span class="ach-inst">Gujarat Technological University (GTU)</span>
+            <p class="ach-desc">
+              Selected as a member of the Women's Cricket Team representing B.H. Gardi College of Engineering &
+              Technology in the West Zone / All India Inter University Competition held at Mohanlal Sukhadia University,
+              Udaipur, Rajasthan during 2024–25.
+            </p>
+            <div
+              style="margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: var(--secondary); font-weight: 700; display: flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-image"></i> Click to View Certificate
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Let's Build Something Amazing Together</h2>
+          <p class="section-subtitle">Reach out for collaborations, project inquiries, or opportunities</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column - Form -->
+          <div class="contact-card animate-on-scroll slide-in-left">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <input type="text" id="form-name" class="form-input" placeholder=" " required>
+                <label for="form-name" class="form-label">Full Name</label>
+                <span class="form-input-focus-line"></span>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="form-email" class="form-input" placeholder=" " required>
+                <label for="form-email" class="form-label">Email Address</label>
+                <span class="form-input-focus-line"></span>
+              </div>
+
+              <div class="form-group">
+                <input type="text" id="form-subject" class="form-input" placeholder=" " required>
+                <label for="form-subject" class="form-label">Subject</label>
+                <span class="form-input-focus-line"></span>
+              </div>
+
+              <div class="form-group">
+                <textarea id="form-message" class="form-input" placeholder=" " required></textarea>
+                <label for="form-message" class="form-label">Message</label>
+                <span class="form-input-focus-line"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-submit-form" style="width: fit-content;">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column - Info -->
+          <div class="contact-info-panel animate-on-scroll slide-in-right">
+            <!-- Email -->
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-info-details">
+                <h4>Email</h4>
+                <a href="mailto:purvapatel470@gmail.com">purvapatel470@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-info-details">
+                <h4>Phone</h4>
+                <p>99091 13639</p>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-info-details">
+                <h4>Location</h4>
+                <p>Rajkot, Gujarat, India</p>
+              </div>
+            </div>
+
+            <!-- Social Connect Cards -->
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+              <div class="contact-info-details">
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/purvadobariya" target="_blank"
+                  rel="noopener noreferrer">in/purvadobariya</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-info-details">
+                <h4>GitHub</h4>
+                <a href="https://github.com/purvadobariya" target="_blank"
+                  rel="noopener noreferrer">github.com/purvadobariya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#landing" class="footer-logo" aria-label="Purva Dobariya Logo"><span>PD</span></a>
+          <p class="footer-tagline">
+            Building intelligent software solutions through Python Development and Artificial Intelligence.
+          </p>
+        </div>
+        <div>
+          <div class="footer-socials">
+            <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:purvapatel470@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Purva Dobariya. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Viewer Overlay -->
+  <div class="lightbox" id="cert-lightbox" aria-hidden="true" role="dialog" aria-label="Certificate Image Viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="Certificate" class="lightbox-image" id="lightbox-img">
+      <h3 class="lightbox-title" id="lightbox-title">Certificate</h3>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
