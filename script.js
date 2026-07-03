@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- SCROLL ANIMATIONS & INTERSECTION OBSERVER ---
   const animateElements = document.querySelectorAll('.animate-on-scroll');
-  const skillFills = document.querySelectorAll('.skill-progress-fill');
   const statNumbers = document.querySelectorAll('.stat-number');
   
   const scrollObserverOptions = {
@@ -63,9 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('animated');
         
         // Trigger specific animations if the container enters the viewport
-        if (entry.target.classList.contains('skills-container') || entry.target.contains(skillFills[0])) {
-          animateSkills();
-        }
         if (entry.target.classList.contains('stats-banner') || entry.target.contains(statNumbers[0])) {
           animateStats();
         }
@@ -84,13 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const achievementsSection = document.getElementById('achievements');
   if (achievementsSection) elementObserver.observe(achievementsSection);
 
-  // --- SKILLS ANIMATION TRIGGER ---
-  function animateSkills() {
-    skillFills.forEach(fill => {
-      const targetPercent = fill.getAttribute('data-percent');
-      fill.style.width = targetPercent;
-    });
-  }
+
 
   // --- STATS COUNTER ANIMATION ---
   let statsAnimated = false;
@@ -189,45 +179,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const certCards = document.querySelectorAll('.cert-card');
   const lightbox = document.getElementById('cert-lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxPdf = document.getElementById('lightbox-pdf');
   const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxClose = document.getElementById('lightbox-close');
-  
+
   certCards.forEach(card => {
     card.addEventListener('click', (e) => {
-      // Prevent clicking subelements from breaking it
       const imgSrc = card.getAttribute('data-src');
+      if (!imgSrc) return;
+      
       const titleText = card.querySelector('.cert-title') ? card.querySelector('.cert-title').textContent : card.querySelector('h3').textContent;
       
-      lightboxImg.src = imgSrc;
+      if (imgSrc.toLowerCase().endsWith('.pdf')) {
+        if (lightboxImg) lightboxImg.style.display = 'none';
+        if (lightboxPdf) {
+          lightboxPdf.style.display = 'block';
+          lightboxPdf.src = imgSrc + '#toolbar=0&navpanes=0&scrollbar=0';
+        }
+      } else {
+        if (lightboxPdf) lightboxPdf.style.display = 'none';
+        if (lightboxImg) {
+          lightboxImg.style.display = 'block';
+          lightboxImg.src = imgSrc;
+        }
+      }
+      
       lightboxTitle.textContent = titleText;
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden'; // Lock background scrolling
+      document.body.style.overflow = 'hidden';
     });
   });
   
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightbox.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = 'auto'; // Unlock background scrolling
+    document.body.style.overflow = 'auto';
     setTimeout(() => {
-      lightboxImg.src = '';
+      if (lightboxImg) lightboxImg.src = '';
+      if (lightboxPdf) lightboxPdf.src = '';
     }, 300);
   }
   
-  lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
   
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
   
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+    if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
       closeLightbox();
     }
   });
+
 
   // --- CONTACT FORM SUBMISSION WITH EMAIL REDIRECT ---
   const contactForm = document.getElementById('contact-form');
@@ -252,15 +263,33 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
-    showToast('Redirecting to mail client...', 'success');
-    
-    // Generate mailto link
-    const mailtoUrl = `mailto:purvapatel470@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Hi Purva,\n\n" + message + "\n\nRegards,\n" + name + "\nContact: " + email)}`;
-    
-    setTimeout(() => {
-      window.location.href = mailtoUrl;
-      contactForm.reset();
-    }, 1200);
+    showToast('Sending message...', 'success');
+
+    // Web3Forms Implementation
+    const formData = new FormData();
+    formData.append("access_key", "fe7125b1-ccd8-47a7-9bc5-f465c33d2843"); 
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("subject", subject);
+    formData.append("message", message);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status === 200) {
+        showToast('Message sent successfully!', 'success');
+        contactForm.reset();
+      } else {
+        showToast('Error sending message. Please try again later.', 'error');
+      }
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error);
+      showToast('Something went wrong! Please try again.', 'error');
+    });
   });
 
   // --- DYNAMIC TOAST ALERT SYSTEM ---
