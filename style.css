@@ -1198,49 +1198,33 @@ header {
   font-size: 1.1rem;
 }
 
-.skills-list {
+.skills-chip-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.skill-item {
-  width: 100%;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+.skill-chip {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px 18px;
+  border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 600;
-}
-
-.skill-name {
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-.skill-percentage {
-  color: var(--secondary);
-}
-
-.skill-progress-bar {
-  width: 100%;
-  height: 8px;
-  background: var(--bg-primary);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--border-color);
-}
-
-.skill-progress-fill {
-  height: 100%;
+.skill-chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--secondary);
   background: var(--gradient-primary);
-  border-radius: 10px;
-  width: 0; /* Animated dynamically with JS */
-  transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
-  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.3);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px var(--glow-shadow);
 }
 
 /* PAGE 7 — CERTIFICATIONS */
@@ -1291,7 +1275,15 @@ header {
   transition: var(--transition-slow);
 }
 
-.cert-card:hover .cert-image-wrapper img {
+.cert-image-wrapper .pdf-placeholder {
+  font-size: 5rem;
+  color: var(--primary);
+  opacity: 0.5;
+  transition: var(--transition-slow);
+}
+
+.cert-card:hover .cert-image-wrapper img,
+.cert-card:hover .cert-image-wrapper .pdf-placeholder {
   transform: scale(1.05);
 }
 
