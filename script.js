@@ -114,18 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- SCROLLSPY (ACTIVE NAV MONITORING) ---
-  const sections = document.querySelectorAll('section');
-  
-  function scrollSpy() {
-    const scrollPosition = window.scrollY + 150; // offset
-    
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-      
-      if (scrollPosition >= top && scrollPosition < top + height) {
+  // --- SCROLLSPY (ACTIVE NAV MONITORING via IntersectionObserver) ---
+  const sections = document.querySelectorAll('section[id]');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
         navLinks.forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('href') === `#${id}`) {
@@ -134,9 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
-  }
-  
-  window.addEventListener('scroll', scrollSpy);
+  }, {
+    root: null,
+    // Fire when at least 30% of the section is visible in viewport
+    threshold: 0,
+    rootMargin: '-30% 0px -60% 0px'
+  });
+
+  sections.forEach(section => navObserver.observe(section));
 
   // --- 3D TILT EFFECT ON CARDS (MICRO-INTERACTIONS) ---
   const tiltCards = document.querySelectorAll('.cert-card, .dev-graphic-card, .edu-card, .achievement-card');
