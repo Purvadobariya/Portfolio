@@ -1,0 +1,6 @@
+# Archives & Zips
+*.zip
+
+# OS Files
+.DS_Store
+Thumbs.db

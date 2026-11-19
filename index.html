@@ -1,195 +1,264 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Purva Dobariya - Personal Portfolio. Computer Engineering Student, Python Developer based in Rajkot, Gujarat, India.">
+    content="Purva Dobariya - Python Developer & Backend Engineer. Computer Engineering student experienced in FastAPI, PostgreSQL, modular REST APIs, and database architecture.">
   <meta name="keywords"
-    content="Purva Dobariya, Portfolio, Python Developer, Computer Engineering, Python Developer, Rajkot, B.H. Gardi, RaktSetu">
+    content="Purva Dobariya, Python Developer, Backend Developer, FastAPI, PostgreSQL, Supabase, SQLAlchemy, Rajkot, Gujarat, PrepSync, RaktSetu">
   <meta name="author" content="Purva Dobariya">
-  <title>Purva Dobariya | Python Developer</title>
+  <title>Purva Dobariya | Python Developer & Backend Engineer</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22Inter, sans-serif%22 font-weight=%2280%22 fill=%22%25255C4033%22>PD</text></svg>">
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%233b82f6%22>PD</text></svg>">
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Background Animated Orbs -->
-  <div class="bg-gradient-shapes" aria-hidden="true">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
+  <!-- Top Linear Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Ambient Background Lighting -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="grid-pattern"></div>
   </div>
 
-  <!-- HEADER / NAVIGATION -->
-  <header id="header">
-    <div class="nav-container">
-      <a href="#landing" class="logo" id="logo-pd" aria-label="Purva Dobariya Logo"><span>PD</span></a>
+  <!-- 1. NAVBAR -->
+  <header class="navbar-container" id="navbar">
+    <div class="nav-content">
+      <a href="#hero" class="nav-brand" aria-label="Purva Dobariya Homepage">
+        <span class="brand-badge">PD</span>
+        <span class="brand-name">Purva Dobariya<span class="brand-dot">.</span></span>
+      </a>
 
-      <nav aria-label="Main Navigation">
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#landing" class="nav-link active">Home</a></li>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#certifications" class="nav-link">Certifications</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
-          <i class="fa-solid fa-moon"></i>
-          <i class="fa-solid fa-sun"></i>
+      <div class="nav-actions">
+        <!-- Resume Action Button -->
+        <button class="btn btn-outline btn-sm btn-resume" id="btn-open-resume" aria-label="View and Download Resume">
+          <i class="fa-regular fa-file-lines"></i>
+          <span>Resume</span>
         </button>
 
-        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light and Dark Theme">
+          <i class="fa-regular fa-sun icon-sun"></i>
+          <i class="fa-regular fa-moon icon-moon"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#education" class="mobile-link">Education</a></li>
+        <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <button class="btn btn-primary btn-block" id="mobile-resume-btn">
+          <i class="fa-solid fa-download"></i> Download Resume
         </button>
       </div>
     </div>
   </header>
 
-  <!-- MAIN SECTIONS -->
-  <main>
+  <!-- MAIN CONTENT WRAPPER -->
+  <main id="main-content">
 
-    <!-- SECTION 1: LANDING -->
-    <section id="landing">
-      <div class="container landing-grid">
-        <div class="hero-content animate-on-scroll delay-100">
-          <span class="hero-subtitle">Welcome to my Space</span>
-          <h1 class="hero-title">Purva Dobariya</h1>
-
-          <div class="designations-wrapper">
-            <span class="designation-badge"><i class="fa-solid fa-graduation-cap"></i> Computer Engineering
-              Student</span>
-            <span class="designation-badge"><i class="fa-solid fa-laptop-code"></i> Python Developer</span>
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-text-col reveal-on-scroll">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for Python & Backend Roles</span>
           </div>
 
-          <p class="hero-desc">
-            Computer Engineering student and aspiring Python Backend Developer passionate about building practical web applications and REST APIs. 
-            I work with Python, Flask, FastAPI, SQL, PostgreSQL, SQLAlchemy, Docker, and Azure, with hands-on experience in backend development, 
-            authentication, database management, and CRUD operations. I’m continuously learning, building real-world projects, 
-            and looking for opportunities to grow as a Python Developer.
+          <h2 class="hero-greeting">Hello, I'm</h2>
+          <h1 class="hero-name">Purva Dobariya</h1>
+
+          <div class="typed-role-container">
+            <span class="role-prefix">I am a </span>
+            <span class="typed-text" id="typed-text"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-description">
+            Computer Engineering student and <strong>Python Developer</strong> specializing in backend development, REST API engineering, and database management. Experienced in building modular architectures using <strong>FastAPI</strong>, <strong>PostgreSQL</strong>, and <strong>Pydantic</strong> through production internships. Focused on engineering secure, scalable, and reliable software systems.
           </p>
 
-          <div class="hero-ctas">
-            <a href="#about" class="btn btn-primary" id="btn-learn-more">Learn More About Me <i
-                class="fa-solid fa-arrow-right"></i></a>
-            <a href="#contact" class="btn btn-secondary" id="btn-get-touch">Get In Touch <i
-                class="fa-solid fa-envelope"></i></a>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button class="btn btn-secondary" id="hero-resume-trigger">
+              <i class="fa-solid fa-download"></i>
+              <span>Download Resume</span>
+            </button>
           </div>
 
-          <div class="hero-socials">
-            <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="social-icon"
-              aria-label="Purva's GitHub Portfolio">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer"
-              class="social-icon" aria-label="Purva's LinkedIn Profile">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:purvapatel470@gmail.com" class="social-icon" aria-label="Email Purva">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
+          <div class="hero-social-strip">
+            <span class="social-strip-label">Find me on</span>
+            <div class="social-links">
+              <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile" title="GitHub: purvadobariya">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile" title="LinkedIn: in/purvadobariya">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:purvapatel470@gmail.com" class="social-btn" aria-label="Email Purva" title="Email: purvapatel470@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+              <a href="tel:+919909113639" class="social-btn" aria-label="Call Purva" title="Phone: +91 99091 13639">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="hero-visual animate-on-scroll delay-300">
-          <div class="dev-graphic-card">
-            <div class="card-header-dots">
-              <span class="dot dot-1"></span>
-              <span class="dot dot-2"></span>
-              <span class="dot dot-3"></span>
+        <div class="hero-visual-col reveal-on-scroll delay-1">
+          <div class="profile-card-showcase">
+            <div class="avatar-glow-ring">
+              <img src="certificate/profile_photo.jpeg" alt="Purva Dobariya" class="profile-image">
             </div>
-            <div class="code-window">
-              <p><span class="code-keyword">const</span> developer = {</p>
-              <p>&nbsp;&nbsp;name: <span class="code-string">"Purva Dobariya"</span>,</p>
-              <p>&nbsp;&nbsp;role: <span class="code-string">"Python Developer"</span>,</p>
-              <p>&nbsp;&nbsp;motto: <span class="code-string">"Solve real-world problems"</span></p>
-              <p>};</p>
-              <br>
-              <p class="code-comment">// Open to new challenges!</p>
-              <p>developer.connect();</p>
+
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-top-right">
+              <div class="badge-icon"><i class="fa-solid fa-bolt text-accent"></i></div>
+              <div class="badge-text">
+                <span class="badge-title">FastAPI & SQL</span>
+                <span class="badge-sub">Backend APIs</span>
+              </div>
             </div>
-            <span class="card-footer-badge">CE @ GTU</span>
+
+            <div class="floating-badge badge-bottom-left">
+              <div class="badge-icon"><i class="fa-solid fa-building-columns text-primary"></i></div>
+              <div class="badge-text">
+                <span class="badge-title">Computer Engineering</span>
+                <span class="badge-sub">B.E. @ GTU (7.87 CGPA)</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <div class="badge-icon"><i class="fa-solid fa-briefcase text-emerald"></i></div>
+              <div class="badge-text">
+                <span class="badge-title">Prolix Technikos</span>
+                <span class="badge-sub">3-Mo. Internship</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: ABOUT ME -->
-    <section id="about">
+    <!-- 3. ABOUT SECTION -->
+    <section class="section" id="about">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-subtitle">A glimpse into my background, focus, and long-term aspirations</p>
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Engineering Reliable Backend Systems</h2>
+          <p class="section-subtitle">Dedicated to clean architecture, modular software design, and resilient database infrastructure.</p>
         </div>
 
         <div class="about-grid">
-          <div class="about-image-container animate-on-scroll slide-in-left">
-            <div class="profile-img-wrapper" id="profile-img-wrapper">
-              <img src="certificate/profile_photo.jpeg" alt="Purva Dobariya Profile Photo">
-            </div>
-            <div class="about-card-glow-border"></div>
-          </div>
-
-          <div class="about-details animate-on-scroll slide-in-right">
-            <p class="about-summary">
-              Computer Engineering student and aspiring Python Developer with hands-on experience in Python, Flask, PostgreSQL, SQL,
-              and web application development.
+          <div class="about-bio-card card-premium reveal-on-scroll">
+            <h3 class="about-card-title">Professional Background</h3>
+            <p class="about-text">
+              I am a Computer Engineering student and <strong>Python Developer</strong> with a strong foundation in backend architecture, relational database management, and REST API engineering. I take pride in developing organized, maintainable codebases that solve real-world problems.
             </p>
-            <p class="about-summary">
-              My technical expertise includes Python, Django, FastAPI, SQL, PostgreSQL, and JavaScript. 
-              I have completed a remote Python Development internship where I gained practical experience in 
-              software development practices, debugging, and writing structured Python solutions.
+            <p class="about-text">
+              During my three-month internship at <strong>Prolix Technikos</strong>, I engineered modular backend API endpoints with FastAPI, structured logic into route-service-repository patterns, and managed complex PostgreSQL database queries. My prior 15-day internship at <strong>Sparks to Ideas</strong> fortified my problem-solving capabilities, data structures, and object-oriented programming foundations.
             </p>
-            <p class="about-summary">
-              I am familiar with OOP, SDLC, AI/ML fundamentals, and cloud technologies like Microsoft Azure. 
-              I enjoy solving complex problems and building platforms that manage real-world tasks.
+            <p class="about-text">
+              My engineering philosophy focuses on <strong>reliability, strict type validation, and clean database normalization</strong>. Whether designing schemas or implementing role-based authentication, I build applications that scale cleanly.
             </p>
-            <div class="mission-vision-grid">
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <h3>My Mission</h3>
-                    <span class="flip-hint">Click or Hover to Flip</span>
-                  </div>
-                  <div class="flip-card-back">
-                    <p>To develop innovative, scalable, and intelligent software solutions that solve real-world
-                      problems while continuously improving my technical expertise.</p>
-                  </div>
-                </div>
-              </div>
 
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <i class="fa-solid fa-eye"></i>
-                    <h3>My Vision</h3>
-                    <span class="flip-hint">Click or Hover to Flip</span>
-                  </div>
-                  <div class="flip-card-back">
-                    <p>To become a skilled Software Engineer and AI Specialist who contributes to impactful technology
-                      products that improve people's lives.</p>
-                  </div>
-                </div>
+            <div class="about-key-stats">
+              <div class="stat-box">
+                <span class="stat-val">3+</span>
+                <span class="stat-lbl">Months Industry Internship</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">2</span>
+                <span class="stat-lbl">Major Full-Stack Projects</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">7.87</span>
+                <span class="stat-lbl">Engineering CGPA (GTU)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-pillars-col">
+            <div class="pillar-card card-premium reveal-on-scroll delay-1">
+              <div class="pillar-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <div>
+                <h4 class="pillar-title">Clean Backend Architecture</h4>
+                <p class="pillar-desc">Structuring applications into modular route, service, and repository layers with Pydantic validation.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card card-premium reveal-on-scroll delay-2">
+              <div class="pillar-icon"><i class="fa-solid fa-database"></i></div>
+              <div>
+                <h4 class="pillar-title">Database Engineering</h4>
+                <p class="pillar-desc">Relational schema design, normalization, query optimization, and migrations with PostgreSQL, MySQL, and Supabase.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card card-premium reveal-on-scroll delay-3">
+              <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h4 class="pillar-title">Authentication & Security</h4>
+                <p class="pillar-desc">Implementing robust JWT token authentication, password hashing, and role-based access control (RBAC).</p>
+              </div>
+            </div>
+
+            <div class="pillar-card card-premium reveal-on-scroll delay-4">
+              <div class="pillar-icon"><i class="fa-solid fa-cloud"></i></div>
+              <div>
+                <h4 class="pillar-title">Cloud & Containerization</h4>
+                <p class="pillar-desc">Utilizing Docker containers, Backblaze B2 object storage, Git version control, and Microsoft Azure cloud fundamentals.</p>
               </div>
             </div>
           </div>
@@ -197,255 +266,186 @@
       </div>
     </section>
 
-
-
-    <!-- SECTION 4: EDUCATION -->
-    <section id="education">
+    <!-- 4. TECHNICAL SKILLS -->
+    <section class="section section-alt" id="skills">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">Education</h2>
-          <p class="section-subtitle">Academic foundations in Computer Engineering</p>
-        </div>
-
-        <div class="education-grid">
-          <!-- Card 1: BE -->
-          <div class="edu-card animate-on-scroll delay-100">
-            <div class="edu-header">
-              <div class="edu-title-group">
-                <h3>Bachelor of Engineering</h3>
-                <span class="edu-inst">B.H. Gardi College of Engineering & Technology (GTU)</span>
-              </div>
-              <div class="edu-badge-group">
-                <span class="edu-badge accent">2024 – Present</span>
-                <span class="edu-badge">Full-Time</span>
-              </div>
-            </div>
-            <ul class="edu-details">
-              <li><i class="fa-solid fa-check"></i><strong>Current CGPA:</strong> 7.87 / 10</li>
-              <li><i class="fa-solid fa-check"></i>Advanced studies in Computer Engineering.</li>
-              <li><i class="fa-solid fa-check"></i>Strong foundation in software development and AI technologies.</li>
-              <li><i class="fa-solid fa-location-dot"></i>Rajkot, Gujarat</li>
-            </ul>
-          </div>
-
-          <!-- Card 2: Diploma -->
-          <div class="edu-card animate-on-scroll delay-200">
-            <div class="edu-header">
-              <div class="edu-title-group">
-                <h3>Diploma in Computer Engineering</h3>
-                <span class="edu-inst">Noble Engineering College</span>
-              </div>
-              <div class="edu-badge-group">
-                <span class="edu-badge accent">2021 – 2024</span>
-                <span class="edu-badge">Full-Time</span>
-              </div>
-            </div>
-            <ul class="edu-details">
-              <li><i class="fa-solid fa-check"></i><strong>CGPA:</strong> 7.83 / 10</li>
-              <li><i class="fa-solid fa-check"></i>Developed programming and database fundamentals.</li>
-              <li><i class="fa-solid fa-check"></i>Built practical knowledge of computer systems and software
-                development.</li>
-              <li><i class="fa-solid fa-location-dot"></i>Junagadh, Gujarat</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4.5: EXPERIENCE -->
-    <section id="experience">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">Experience</h2>
-          <p class="section-subtitle">Professional exposure and internships</p>
-        </div>
-
-        <div class="experience-timeline">
-          <!-- Experience 1 -->
-          <div class="experience-card animate-on-scroll delay-100">
-            <div class="exp-header">
-              <div class="exp-icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="exp-title-group">
-                <h3>Python Developer Intern</h3>
-                <span class="exp-inst">Sparks to Ideas</span>
-              </div>
-              <div class="exp-badge-group">
-                <span class="exp-badge accent">03 Jul 2026 – 17 Jul 2026</span>
-                <span class="exp-badge">Remote</span>
-              </div>
-            </div>
-            <div class="exp-content">
-              <ul class="exp-details">
-                <li><i class="fa-solid fa-check"></i>Completed a 15-day remote internship focused on Python development and practical programming tasks.</li>
-                <li><i class="fa-solid fa-check"></i>Worked with Python fundamentals, data structures, functions, OOP, file handling, and problem-solving.</li>
-                <li><i class="fa-solid fa-check"></i>Gained practical experience in software development practices, debugging, and writing structured Python solutions.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: PROJECTS -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Explore my key academic and self-driven software projects</p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Project 1 -->
-           <div class="project-panel animate-on-scroll" id="project-placement">
-            <div class="project-visual">
-              <div class="project-visual-icon"><i class="fa-solid fa-graduation-cap" style="color: #4CAF50;"></i></div>
-            </div>
-            <div class="project-content">
-              <span class="project-type">Full-Stack Web Application (Ongoing)</span>
-              <h3 class="project-title">Placement Preparation Management System</h3>
-              <p class="project-desc">
-                A full-stack platform to manage placement preparation, tasks, communication, and student progress.
-              </p>
-
-              <span class="project-bullets-title">Key Features</span>
-              <ul class="project-bullets">
-                <li>Implementing role-based authentication for Students, Faculty, and Placement Cell Administrators.</li>
-                <li>Developing CRUD modules, personalized dashboards, assignment management, announcements, marks, and feedback.</li>
-                <li>Designing a normalized PostgreSQL database and integrating backend functionality using FastAPI.</li>
-              </ul>
-
-              <div class="project-tech-tags">
-                <span class="project-tech-tag">Python</span>
-                <span class="project-tech-tag">FastAPI</span>
-                <span class="project-tech-tag">PostgreSQL</span>
-                <span class="project-tech-tag">HTML5</span>
-                <span class="project-tech-tag">CSS3</span>
-                <span class="project-tech-tag">Bootstrap</span>
-                <span class="project-tech-tag">JavaScript</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-panel animate-on-scroll" id="project-raktsetu">
-            <div class="project-visual">
-              <div class="project-visual-icon"><i class="fa-solid fa-droplet" style="color: #A0522D;"></i></div>
-            </div>
-            <div class="project-content">
-              <span class="project-type">Full-Stack Web Application</span>
-              <h3 class="project-title">RaktSetu – Blood Donation System</h3>
-              <p class="project-desc">
-                A web-based platform that connects blood donors and recipients through an efficient management system
-                featuring donor registration, blood requests, and search capabilities.
-              </p>
-
-              <span class="project-bullets-title">Key Outcomes</span>
-              <ul class="project-bullets">
-                <li>Developed complete donor-recipient management workflow.</li>
-                <li>Implemented blood request and search functionalities.</li>
-                <li>Designed responsive user interfaces.</li>
-                <li>Optimized database performance and retrieval speed.</li>
-                <li><a href="https://raktsetu.site.je/?i=1">RAKTSETU.SITE.JE</a></li>
-              </ul>
-
-              <div class="project-tech-tags">
-                <span class="project-tech-tag">HTML</span>
-                <span class="project-tech-tag">CSS</span>
-                <span class="project-tech-tag">JavaScript</span>
-                <span class="project-tech-tag">PHP</span>
-                <span class="project-tech-tag">MySQL</span>
-                <span class="project-tech-tag">XAMPP</span>
-              </div>
-                     </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: SKILLS -->
-    <section id="skills">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">My Skills</h2>
-          <p class="section-subtitle">Technologies and tools I work with</p>
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Core Competencies</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">Categorized technologies and tools applied in real-world internships and academic platforms.</p>
         </div>
 
         <div class="skills-grid">
-
-          <div class="skill-card animate-on-scroll delay-100">
-            <div class="skill-card-icon" style="background: linear-gradient(135deg,#6C3DE8,#818CF8);">
-              <i class="fa-solid fa-code"></i>
+          <!-- Programming -->
+          <div class="skill-group-card card-premium reveal-on-scroll">
+            <div class="skill-group-header">
+              <div class="sg-icon"><i class="fa-solid fa-code"></i></div>
+              <h3 class="sg-title">Programming</h3>
             </div>
-            <h4 class="skill-card-title">Programming</h4>
-            <div class="skill-pills">
-              <span class="skill-pill">Python</span>
-              <span class="skill-pill">SQL</span>
-              <span class="skill-pill">JavaScript</span>
-              <span class="skill-pill">PHP</span>
-            </div>
-          </div>
-
-          <div class="skill-card animate-on-scroll delay-200">
-            <div class="skill-card-icon" style="background: linear-gradient(135deg,#06B6D4,#0EA5E9);">
-              <i class="fa-solid fa-server"></i>
-            </div>
-            <h4 class="skill-card-title">Backend & APIs</h4>
-            <div class="skill-pills">
-              <span class="skill-pill">FastAPI</span>
-              <span class="skill-pill">Flask</span>
-              <span class="skill-pill">Django</span>
-              <span class="skill-pill">REST APIs</span>
-              <span class="skill-pill">JWT Auth</span>
+            <div class="skill-badges">
+              <span class="skill-badge highlight"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-database"></i> SQL</span>
+              <span class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-badge"><i class="fa-solid fa-code"></i> TypeScript</span>
+              <span class="skill-badge"><i class="fa-brands fa-php"></i> PHP</span>
             </div>
           </div>
 
-          <div class="skill-card animate-on-scroll delay-300">
-            <div class="skill-card-icon" style="background: linear-gradient(135deg,#F472B6,#EC4899);">
-              <i class="fa-solid fa-database"></i>
+          <!-- Backend -->
+          <div class="skill-group-card card-premium reveal-on-scroll delay-1">
+            <div class="skill-group-header">
+              <div class="sg-icon"><i class="fa-solid fa-server"></i></div>
+              <h3 class="sg-title">Backend Development</h3>
             </div>
-            <h4 class="skill-card-title">Databases</h4>
-            <div class="skill-pills">
-              <span class="skill-pill">PostgreSQL</span>
-              <span class="skill-pill">MySQL</span>
-              <span class="skill-pill">SQLAlchemy</span>
-            </div>
-          </div>
-
-          <div class="skill-card animate-on-scroll delay-200">
-            <div class="skill-card-icon" style="background: linear-gradient(135deg,#F59E0B,#D97706);">
-              <i class="fa-solid fa-laptop-code"></i>
-            </div>
-            <h4 class="skill-card-title">Frontend</h4>
-            <div class="skill-pills">
-              <span class="skill-pill">HTML5</span>
-              <span class="skill-pill">CSS3</span>
-              <span class="skill-pill">Bootstrap</span>
+            <div class="skill-badges">
+              <span class="skill-badge highlight"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+              <span class="skill-badge"><i class="fa-solid fa-network-wired"></i> REST APIs</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-key"></i> JWT Authentication</span>
+              <span class="skill-badge"><i class="fa-brands fa-python"></i> Django</span>
+              <span class="skill-badge"><i class="fa-solid fa-flask"></i> Flask</span>
             </div>
           </div>
 
-          <div class="skill-card animate-on-scroll delay-300">
-            <div class="skill-card-icon" style="background: linear-gradient(135deg,#8B5CF6,#7C3AED);">
-              <i class="fa-solid fa-microchip"></i>
+          <!-- Databases -->
+          <div class="skill-group-card card-premium reveal-on-scroll delay-2">
+            <div class="skill-group-header">
+              <div class="sg-icon"><i class="fa-solid fa-database"></i></div>
+              <h3 class="sg-title">Databases & ORM</h3>
             </div>
-            <h4 class="skill-card-title">CS Fundamentals</h4>
-            <div class="skill-pills">
-              <span class="skill-pill">OOP</span>
-              <span class="skill-pill">DSA</span>
-              <span class="skill-pill">DBMS</span>
+            <div class="skill-badges">
+              <span class="skill-badge highlight"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-fire"></i> Supabase</span>
+              <span class="skill-badge"><i class="fa-solid fa-table"></i> MySQL</span>
+              <span class="skill-badge"><i class="fa-solid fa-link"></i> SQLAlchemy</span>
             </div>
           </div>
 
-          <div class="skill-card animate-on-scroll delay-200">
-            <div class="skill-card-icon" style="background: linear-gradient(135deg,#3B82F6,#2563EB);">
-              <i class="fa-solid fa-cloud"></i>
+          <!-- Tools -->
+          <div class="skill-group-card card-premium reveal-on-scroll delay-1">
+            <div class="skill-group-header">
+              <div class="sg-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3 class="sg-title">Tools & DevOps</h3>
             </div>
-            <h4 class="skill-card-title">Cloud & Tools</h4>
-            <div class="skill-pills">
-              <span class="skill-pill">Microsoft Azure</span>
-              <span class="skill-pill">Docker</span>
-              <span class="skill-pill">Git & GitHub</span>
-              <span class="skill-pill">VS Code</span>
+            <div class="skill-badges">
+              <span class="skill-badge highlight"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="skill-badge"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="skill-badge highlight"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="skill-badge"><i class="fa-solid fa-code-branch"></i> Alembic</span>
+              <span class="skill-badge"><i class="fa-solid fa-file-code"></i> Swagger UI</span>
+              <span class="skill-badge"><i class="fa-solid fa-box-archive"></i> Backblaze B2</span>
+            </div>
+          </div>
+
+          <!-- Other Core Concepts -->
+          <div class="skill-group-card card-premium reveal-on-scroll delay-2">
+            <div class="skill-group-header">
+              <div class="sg-icon"><i class="fa-solid fa-cubes"></i></div>
+              <h3 class="sg-title">Core Concepts</h3>
+            </div>
+            <div class="skill-badges">
+              <span class="skill-badge"><i class="fa-solid fa-cube"></i> Object-Oriented Programming (OOP)</span>
+              <span class="skill-badge"><i class="fa-solid fa-arrows-spin"></i> SDLC</span>
+              <span class="skill-badge"><i class="fa-solid fa-table-list"></i> Database Management</span>
+              <span class="skill-badge"><i class="fa-solid fa-bug-slash"></i> Debugging & Testing</span>
+              <span class="skill-badge"><i class="fa-solid fa-code-commit"></i> Version Control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EXPERIENCE SECTION -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Career Journey</span>
+          <h2 class="section-title">Internship Experience</h2>
+          <p class="section-subtitle">Real-world software engineering exposure in backend development and programming.</p>
+        </div>
+
+        <div class="timeline-container">
+
+          <!-- Internship 1: Prolix Technikos -->
+          <div class="timeline-card-wrapper reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-circle"></span>
+              <span class="marker-stem"></span>
+            </div>
+
+            <div class="timeline-card card-premium">
+              <div class="timeline-card-top">
+                <div class="timeline-title-meta">
+                  <div class="timeline-badge-row">
+                    <span class="badge-role-tag">Python Developer Intern</span>
+                    <span class="badge-duration-pill">3 Months</span>
+                  </div>
+                  <h3 class="company-name">Prolix Technikos</h3>
+                  <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rajkot, Gujarat</p>
+                </div>
+                <div class="timeline-dates">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>20 July 2026 – 20 October 2026</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <ul class="timeline-bullets">
+                  <li>Developed and maintained backend API modules using Python and FastAPI, organizing application logic into routes, services, repositories, and Pydantic schemas.</li>
+                  <li>Implemented database operations using PostgreSQL and SQL, working on data retrieval, insertion, updates, and debugging database-related issues.</li>
+                  <li>Tested API endpoints through Swagger UI to verify request handling, responses, and backend functionality.</li>
+                  <li>Collaborated on Git and GitHub workflows, code reviews, and architectural refactoring for modularity.</li>
+                </ul>
+
+                <div class="timeline-tech-row">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">FastAPI</span>
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">SQL</span>
+                  <span class="tech-chip">Pydantic</span>
+                  <span class="tech-chip">Swagger UI</span>
+                  <span class="tech-chip">Git & GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internship 2: Sparks to Ideas -->
+          <div class="timeline-card-wrapper reveal-on-scroll delay-1">
+            <div class="timeline-marker">
+              <span class="marker-circle"></span>
+            </div>
+
+            <div class="timeline-card card-premium">
+              <div class="timeline-card-top">
+                <div class="timeline-title-meta">
+                  <div class="timeline-badge-row">
+                    <span class="badge-role-tag">Python Development Intern</span>
+                    <span class="badge-duration-pill">15 Days</span>
+                  </div>
+                  <h3 class="company-name">Sparks to Ideas</h3>
+                  <p class="timeline-location"><i class="fa-solid fa-globe"></i> Remote Internship</p>
+                </div>
+                <div class="timeline-dates">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>03 July 2026 – 17 July 2026</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <ul class="timeline-bullets">
+                  <li>Completed a 15-day practical internship focused on Python programming and algorithmic problem-solving.</li>
+                  <li>Practised data structures, functions, object-oriented programming (OOP), and file handling through programming tasks.</li>
+                  <li>Improved Python coding practices by debugging errors and developing structured solutions.</li>
+                </ul>
+
+                <div class="timeline-tech-row">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">OOP</span>
+                  <span class="tech-chip">Data Structures</span>
+                  <span class="tech-chip">File Handling</span>
+                  <span class="tech-chip">Debugging</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -453,261 +453,405 @@
       </div>
     </section>
 
-
-    <!-- SECTION 7: CERTIFICATIONS -->
-    <section id="certifications">
+    <!-- 6. FEATURED PROJECTS -->
+    <section class="section section-alt" id="projects">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">Certifications</h2>
-          <p class="section-subtitle">Verified professional and academic training credentials</p>
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Featured Engineering</span>
+          <h2 class="section-title">Software Projects</h2>
+          <p class="section-subtitle">Real-world applications engineered with modular backends, secure auth, and normalized databases.</p>
         </div>
 
-        <div class="certifications-grid">
-          <!-- Cert 0 -->
-          <div class="cert-card animate-on-scroll delay-100" data-src="certificate/Microsoft_Azure_Certificate.png">
-            <div class="cert-image-wrapper">
-              <img src="certificate/Microsoft_Azure_Certificate.png" alt="Microsoft Azure Cloud Certificate">
-              <div class="cert-overlay">
-                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
+        <div class="projects-stack">
+
+          <!-- PROJECT 1: PrepSync (Featured Star Project) -->
+          <div class="project-hero-card card-premium reveal-on-scroll">
+            <div class="project-spotlight-bar">
+              <span class="spotlight-tag"><i class="fa-solid fa-star"></i> Featured Backend Architecture</span>
+              <span class="status-indicator-tag ongoing"><i class="fa-solid fa-spinner fa-spin"></i> Ongoing Development</span>
             </div>
-            <div class="cert-content">
-              <h3 class="cert-title">Microsoft Azure / Cloud Certificate</h3>
-              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Microsoft</span>
+
+            <div class="project-main-grid">
+              <div class="project-info-side">
+                <h3 class="project-title">Placement Preparation Management System (PrepSync)</h3>
+                <p class="project-tagline">Enterprise Academic Platform for Placement Tracking & Evaluation</p>
+
+                <p class="project-overview">
+                  A full-stack platform built to manage placement preparation, academic tasks, student progress tracking, announcements, and evaluations across students, faculty, and placement cell administrators.
+                </p>
+
+                <!-- Architecture Visualization Flowchart -->
+                <div class="architecture-flowchart">
+                  <span class="arch-label"><i class="fa-solid fa-diagram-project"></i> Backend Architecture Pipeline</span>
+                  <div class="arch-nodes">
+                    <div class="arch-node">Client (React)</div>
+                    <span class="arch-connector"><i class="fa-solid fa-arrow-right"></i></span>
+                    <div class="arch-node highlight">FastAPI Routes</div>
+                    <span class="arch-connector"><i class="fa-solid fa-arrow-right"></i></span>
+                    <div class="arch-node">Services Layer</div>
+                    <span class="arch-connector"><i class="fa-solid fa-arrow-right"></i></span>
+                    <div class="arch-node">Repositories</div>
+                    <span class="arch-connector"><i class="fa-solid fa-arrow-right"></i></span>
+                    <div class="arch-node highlight">PostgreSQL</div>
+                  </div>
+                </div>
+
+                <div class="project-features-grid">
+                  <div class="feature-bullet">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                      <strong>Role-Based Authentication:</strong> Secure JWT authentication for Students, Faculty, and Admin dashboards with customized permissions.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <i class="fa-solid fa-list-check"></i>
+                    <div>
+                      <strong>Domain & Task Management:</strong> Modules for assignment creation, student submissions, marks grading, and structured faculty feedback.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <i class="fa-solid fa-database"></i>
+                    <div>
+                      <strong>Database & Cloud Storage:</strong> Supabase PostgreSQL integration via SQLAlchemy and Backblaze B2 for document/file attachments.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-tech-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Supabase</span>
+                  <span class="tag">SQLAlchemy</span>
+                  <span class="tag">JWT Auth</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">React</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Backblaze B2</span>
+                </div>
+
+                <div class="project-btn-row">
+                  <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub Profile / Repos</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Cert 1 -->
-          <div class="cert-card animate-on-scroll delay-200" data-src="certificate/PHP_certificate.png">
-            <div class="cert-image-wrapper">
-              <img src="certificate/PHP_certificate.png" alt="PHP Training Program Certificate">
-              <div class="cert-overlay">
-                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
+          <!-- PROJECT 2: RaktSetu -->
+          <div class="project-regular-card card-premium reveal-on-scroll delay-1">
+            <div class="project-spotlight-bar">
+              <span class="spotlight-tag live"><i class="fa-solid fa-signal"></i> Production Deployment</span>
+              <span class="status-indicator-tag live">Live Web App</span>
             </div>
-            <div class="cert-content">
-              <h3 class="cert-title">PHP Training Program</h3>
-              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Institute of Advanced Research, Gandhinagar</span>
+
+            <div class="project-card-content">
+              <div class="project-top-row">
+                <div>
+                  <h3 class="project-title">RaktSetu – Blood Donation Management System</h3>
+                  <p class="project-tagline">Full-Stack Community Healthcare Network</p>
+                </div>
+                <a href="https://raktsetu.site.je" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm live-link-btn" title="Open live project">
+                  <span>Visit raktsetu.site.je</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <div class="project-media-banner">
+                <img src="certificate/Raktsetu.png" alt="RaktSetu Application Interface" loading="lazy" class="project-screenshot">
+              </div>
+
+              <p class="project-overview">
+                A web application connecting blood donors and recipients across locations with intelligent donor matching, urgent blood request tracking, and automated email notifications.
+              </p>
+
+              <div class="project-features-grid">
+                <div class="feature-bullet">
+                  <i class="fa-solid fa-hand-holding-droplet"></i>
+                  <div>
+                    <strong>Donor & Recipient Management:</strong> Secure authentication, donor registration, blood request workflows, and donation history tracking.
+                  </div>
+                </div>
+                <div class="feature-bullet">
+                  <i class="fa-solid fa-location-crosshairs"></i>
+                  <div>
+                    <strong>Intelligent Donor Matching:</strong> Matches urgent blood requests based on blood group compatibility and recipient geographic location.
+                  </div>
+                </div>
+                <div class="feature-bullet">
+                  <i class="fa-solid fa-envelope-circle-check"></i>
+                  <div>
+                    <strong>Automated Email Notifications:</strong> Integrated PHPMailer to send instantaneous alerts to compatible registered donors.
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-tech-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">XAMPP</span>
+                <span class="tag">PHPMailer</span>
+              </div>
             </div>
           </div>
 
-          <!-- Cert 2 -->
-          <div class="cert-card animate-on-scroll delay-200" data-src="certificate/Python_certificate.png">
-            <div class="cert-image-wrapper">
-              <img src="certificate/Python_certificate.png" alt="Python Programming Certificate">
-              <div class="cert-overlay">
-                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. EDUCATION SECTION -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Academic foundations in Computer Engineering and Software Systems.</p>
+        </div>
+
+        <div class="education-grid">
+          <!-- B.E. -->
+          <div class="edu-card card-premium reveal-on-scroll">
+            <div class="edu-header">
+              <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="edu-headline">
+                <h3 class="edu-degree">Bachelor of Engineering in Computer Engineering</h3>
+                <h4 class="edu-college">B.H. Gardi College of Engineering & Technology (GTU)</h4>
+                <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Rajkot, Gujarat</p>
+              </div>
+              <div class="edu-badge-col">
+                <span class="edu-date-badge">2024 – Present</span>
+                <span class="edu-score-badge">CGPA: <strong>7.87 / 10</strong></span>
               </div>
             </div>
-            <div class="cert-content">
-              <h3 class="cert-title">Python Programming</h3>
-              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Institute of Advanced Research, Gandhinagar</span>
+            <p class="edu-summary">
+              Studying advanced software engineering, distributed systems, database management, and backend application development.
+            </p>
+          </div>
+
+          <!-- Diploma -->
+          <div class="edu-card card-premium reveal-on-scroll delay-1">
+            <div class="edu-header">
+              <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="edu-headline">
+                <h3 class="edu-degree">Diploma in Computer Engineering</h3>
+                <h4 class="edu-college">Noble Engineering College</h4>
+                <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Junagadh, Gujarat</p>
+              </div>
+              <div class="edu-badge-col">
+                <span class="edu-date-badge">2021 – 2024</span>
+                <span class="edu-score-badge">CGPA: <strong>7.83 / 10</strong></span>
+              </div>
+            </div>
+            <p class="edu-summary">
+              Graduated with distinction. Built foundational knowledge in object-oriented programming, data structures, relational databases, and operating systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CERTIFICATIONS -->
+    <section class="section section-alt" id="certifications">
+      <div class="container">
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Credentials</span>
+          <h2 class="section-title">Verified Certifications</h2>
+          <p class="section-subtitle">Professional technical training, cloud courses, and workshop certifications.</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1: Microsoft Azure -->
+          <div class="cert-card card-premium reveal-on-scroll" data-src="certificate/Microsoft_Azure_Certificate.png">
+            <div class="cert-thumb-wrap">
+              <img src="certificate/Microsoft_Azure_Certificate.png" alt="Microsoft Azure Cloud Certificate" loading="lazy">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-meta-date">July 2026</span>
+              <h3 class="cert-name">Microsoft Azure / Cloud Certificate</h3>
+              <p class="cert-provider"><i class="fa-brands fa-microsoft"></i> Microsoft</p>
+              <p class="cert-desc">Completed training focused on Microsoft Azure and fundamental cloud architecture, services, and security principles.</p>
             </div>
           </div>
 
-          <!-- Cert 3 -->
-          <div class="cert-card animate-on-scroll delay-200" data-src="certificate/Data Analysis with Python.png">
-            <div class="cert-image-wrapper">
-              <img src="certificate/Data Analysis with Python.png" alt="Data Analysis with Python Certificate">
-              <div class="cert-overlay">
-                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
+          <!-- Cert 2: Python Programming -->
+          <div class="cert-card card-premium reveal-on-scroll delay-1" data-src="certificate/Python_certificate.png">
+            <div class="cert-thumb-wrap">
+              <img src="certificate/Python_certificate.png" alt="Python Programming Certificate" loading="lazy">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
-            <div class="cert-content">
-              <h3 class="cert-title">Data Analysis with Python</h3>
-              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Infosys SpringBoard</span>
-            </div>
-          </div>
-
-          <!-- Cert 4 -->
-          <div class="cert-card animate-on-scroll delay-400" data-src="certificate/Hackathon_certificate.png">
-            <div class="cert-image-wrapper">
-              <img src="certificate/Hackathon_certificate.png" alt="Hackathon Participation Certificate">
-              <div class="cert-overlay">
-                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="cert-content">
-              <h3 class="cert-title">Hackathon Participation</h3>
-              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Rajkot Information Technology Association</span>
+            <div class="cert-details">
+              <span class="cert-meta-date">Jan 2025</span>
+              <h3 class="cert-name">Python Programming</h3>
+              <p class="cert-provider"><i class="fa-solid fa-building-columns"></i> Institute of Advanced Research, Gandhinagar</p>
+              <p class="cert-desc">Mastered Python fundamentals, data structures, file handling, and object-oriented programming.</p>
             </div>
           </div>
 
-          <!-- Cert 5 -->
-          <div class="cert-card animate-on-scroll delay-500" data-src="certificate/Cricket_certificate.png">
-            <div class="cert-image-wrapper">
-              <img src="certificate/Cricket_certificate.png" alt="Cricket representation Certificate">
-              <div class="cert-overlay">
-                <div class="cert-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
+          <!-- Cert 3: PHP Training -->
+          <div class="cert-card card-premium reveal-on-scroll delay-2" data-src="certificate/PHP_certificate.png">
+            <div class="cert-thumb-wrap">
+              <img src="certificate/PHP_certificate.png" alt="PHP Training Program Certificate" loading="lazy">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
-            <div class="cert-content">
-              <h3 class="cert-title">GTU Pride – Cricket (Women)</h3>
-              <span class="cert-provider"><i class="fa-solid fa-building-columns"></i> Gujarat Technological University (GTU)</span>
+            <div class="cert-details">
+              <span class="cert-meta-date">Sept 2024</span>
+              <h3 class="cert-name">PHP Training Program</h3>
+              <p class="cert-provider"><i class="fa-solid fa-building-columns"></i> Institute of Advanced Research, Gandhinagar</p>
+              <p class="cert-desc">Developed dynamic web applications with PHP and MySQL, including database connectivity and authentication.</p>
+            </div>
+          </div>
+
+          <!-- Cert 4: Analytics with Python -->
+          <div class="cert-card card-premium reveal-on-scroll delay-1" data-src="certificate/Data Analysis with Python.png">
+            <div class="cert-thumb-wrap">
+              <img src="certificate/Data Analysis with Python.png" alt="Analytics with Python Certificate" loading="lazy">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-meta-date">Infosys</span>
+              <h3 class="cert-name">Analytics with Python</h3>
+              <p class="cert-provider"><i class="fa-solid fa-award"></i> Infosys Springboard</p>
+              <p class="cert-desc">Comprehensive training in data analysis with Python, NumPy, Pandas, data exploration, and visualization.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 8: ACHIEVEMENTS -->
-    <section id="achievements">
+    <!-- 9. ACHIEVEMENTS SECTION -->
+    <section class="section" id="achievements">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">Achievements & Recognition</h2>
-          <p class="section-subtitle">"Academic excellence, project innovation, and continuous growth in software
-            development and artificial intelligence."</p>
-        </div>
-
-        <!-- Stats Banner -->
-        <div class="stats-banner animate-on-scroll">
-          <div class="stat-item">
-            <div class="stat-number" data-target="4">0</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-target="1">0</div>
-            <div class="stat-label">Major Projects</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-target="2">0</div>
-            <div class="stat-label">Awards / Achievements</div>
-          </div>
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Recognition</span>
+          <h2 class="section-title">Achievements</h2>
+          <p class="section-subtitle">Sports representation and competitive software development achievements.</p>
         </div>
 
         <div class="achievements-grid">
-          <!-- Achievement 1 -->
-          <div class="achievement-card animate-on-scroll delay-200">
-            <span class="ach-category">Academic</span>
-            <span
-              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
-            <h3>Multiple Full-Stack Applications</h3>
-            <span class="ach-inst">B.H. Gardi College of Engineering & Technology</span>
-            <p class="ach-desc">
-              Successfully built and deployed multiple full-stack web applications using modern development
-              technologies.
-            </p>
-          </div>
-
-          <!-- Achievement 2 -->
-          <div class="achievement-card cert-card animate-on-scroll delay-400"
-            data-src="certificate/Hackathon_certificate.png" style="cursor: pointer;">
-            <span class="ach-category">Competition</span>
-            <span
-              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
-            <h3>Hackathon Participation</h3>
-            <span class="ach-inst">Rajkot Information Technology Association</span>
-            <p class="ach-desc">
-              Actively participated and collaborated in a competitive hackathon, solving real-world challenges through innovative software development.
-            </p>
-            <div
-              style="margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: var(--secondary); font-weight: 700; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-image"></i> Click to View Certificate
+          <!-- Achievement 1: GTU Cricket -->
+          <div class="achievement-card card-premium reveal-on-scroll" data-src="certificate/Cricket_certificate.png">
+            <div class="ach-icon"><i class="fa-solid fa-medal"></i></div>
+            <div class="ach-content">
+              <span class="ach-cat">Inter-University Sports</span>
+              <h3 class="ach-title">Two-time GTU Representative – Women's Cricket</h3>
+              <p class="ach-body">
+                Selected to represent Gujarat Technological University (GTU) in the West Zone / All India Inter-University Women's Cricket Competition held at Mohanlal Sukhadia University, Udaipur.
+              </p>
+              <span class="ach-preview-link"><i class="fa-regular fa-image"></i> View Certificate</span>
             </div>
           </div>
 
-          <!-- Achievement 3 -->
-          <div class="achievement-card cert-card animate-on-scroll delay-400"
-            data-src="certificate/Cricket_certificate.png" style="cursor: pointer;">
-            <span class="ach-category">Academic / Sports</span>
-            <span
-              style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">2025</span>
-            <h3>GTU Pride – Women's Cricket Representation</h3>
-            <span class="ach-inst">Gujarat Technological University (GTU)</span>
-            <p class="ach-desc">
-              Selected as a member of the Women's Cricket Team representing B.H. Gardi College of Engineering &
-              Technology in the West Zone / All India Inter University Competition held at Mohanlal Sukhadia University,
-              Udaipur, Rajasthan during 2024–25.
-            </p>
-            <div
-              style="margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: var(--secondary); font-weight: 700; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-image"></i> Click to View Certificate
+          <!-- Achievement 2: Hackathon -->
+          <div class="achievement-card card-premium reveal-on-scroll delay-1" data-src="certificate/Hackathon_certificate.png">
+            <div class="ach-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="ach-content">
+              <span class="ach-cat">Technical Competition</span>
+              <h3 class="ach-title">Hackathon Participation – Rajkot IT Association</h3>
+              <p class="ach-body">
+                Collaborated in a competitive time-constrained hackathon organized by the Rajkot Information Technology Association (RITA), solving real-world challenges through software.
+              </p>
+              <span class="ach-preview-link"><i class="fa-regular fa-image"></i> View Certificate</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 9: CONTACT -->
-    <section id="contact">
+    <!-- 10. CONTACT SECTION -->
+    <section class="section section-alt" id="contact">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="section-title">Let's Build Something Amazing Together</h2>
-          <p class="section-subtitle">Reach out for collaborations, project inquiries, or opportunities</p>
+        <div class="section-title-wrap reveal-on-scroll">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Interested in discussing a Python / Backend Developer role, an internship opportunity, or a project collaboration? I'd love to hear from you.</p>
         </div>
 
-        <div class="contact-grid">
-          <!-- Left Column - Form -->
-          <div class="contact-card animate-on-scroll slide-in-left">
-            <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-group">
-                <input type="text" id="form-name" class="form-input" placeholder=" " required>
-                <label for="form-name" class="form-label">Full Name</label>
-                <span class="form-input-focus-line"></span>
+        <div class="contact-layout">
+          <!-- Left: Direct Info Cards -->
+          <div class="contact-info-col reveal-on-scroll">
+            <div class="contact-card card-premium copy-trigger" data-copy="purvapatel470@gmail.com">
+              <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="contact-card-text">
+                <span class="cc-label">Email Address</span>
+                <span class="cc-val">purvapatel470@gmail.com</span>
               </div>
+              <span class="copy-hint" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></span>
+            </div>
 
-              <div class="form-group">
-                <input type="email" id="form-email" class="form-input" placeholder=" " required>
-                <label for="form-email" class="form-label">Email Address</label>
-                <span class="form-input-focus-line"></span>
+            <div class="contact-card card-premium copy-trigger" data-copy="+919909113639">
+              <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-card-text">
+                <span class="cc-label">Phone / WhatsApp</span>
+                <span class="cc-val">+91 99091 13639</span>
               </div>
+              <span class="copy-hint" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></span>
+            </div>
 
-              <div class="form-group">
-                <input type="text" id="form-subject" class="form-input" placeholder=" " required>
-                <label for="form-subject" class="form-label">Subject</label>
-                <span class="form-input-focus-line"></span>
+            <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer" class="contact-card card-premium">
+              <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="contact-card-text">
+                <span class="cc-label">LinkedIn</span>
+                <span class="cc-val">linkedin.com/in/purvadobariya</span>
               </div>
+              <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
 
-              <div class="form-group">
-                <textarea id="form-message" class="form-input" placeholder=" " required></textarea>
-                <label for="form-message" class="form-label">Message</label>
-                <span class="form-input-focus-line"></span>
+            <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="contact-card card-premium">
+              <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-card-text">
+                <span class="cc-label">GitHub</span>
+                <span class="cc-val">github.com/purvadobariya</span>
               </div>
+              <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
 
-              <button type="submit" class="btn btn-primary" id="btn-submit-form" style="width: fit-content;">
-                Send Message <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
+            <!-- Professional Closing Card -->
+            <div class="closing-message-card card-premium">
+              <i class="fa-solid fa-quote-left text-accent"></i>
+              <p>
+                "Dedicated to engineering reliable, secure backend infrastructure that powers seamless software experiences. Always open to discussing new opportunities and challenges."
+              </p>
+              <span class="closing-author">— Purva Dobariya</span>
+            </div>
           </div>
 
-          <!-- Right Column - Info -->
-          <div class="contact-info-panel animate-on-scroll slide-in-right">
-            <!-- Email -->
-            <div class="contact-info-item">
-              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div class="contact-info-details">
-                <h4>Email</h4>
-                <a href="mailto:purvapatel470@gmail.com">purvapatel470@gmail.com</a>
-              </div>
-            </div>
+          <!-- Right: Working Web3Forms Contact Form -->
+          <div class="contact-form-col reveal-on-scroll delay-1">
+            <div class="form-wrapper card-premium">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <form id="contact-form" novalidate>
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="form-name">Full Name</label>
+                    <input type="text" id="form-name" placeholder="John Doe" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-email">Email Address</label>
+                    <input type="email" id="form-email" placeholder="john@example.com" required>
+                  </div>
+                </div>
 
+                <div class="form-group">
+                  <label for="form-subject">Subject</label>
+                  <input type="text" id="form-subject" placeholder="Opportunity / Project Inquiry" required>
+                </div>
 
-            <!-- Location -->
-            <div class="contact-info-item">
-              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div class="contact-info-details">
-                <h4>Location</h4>
-                <p>Rajkot, Gujarat, India</p>
-              </div>
-            </div>
+                <div class="form-group">
+                  <label for="form-message">Message</label>
+                  <textarea id="form-message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
 
-            <!-- Social Connect Cards -->
-            <div class="contact-info-item">
-              <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
-              <div class="contact-info-details">
-                <h4>LinkedIn</h4>
-                <a href="https://linkedin.com/in/purvadobariya" target="_blank"
-                  rel="noopener noreferrer">in/purvadobariya</a>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
-              <div class="contact-info-details">
-                <h4>GitHub</h4>
-                <a href="https://github.com/purvadobariya" target="_blank"
-                  rel="noopener noreferrer">github.com/purvadobariya</a>
-              </div>
+                <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-form">
+                  <span>Send Message</span>
+                  <i class="fa-regular fa-paper-plane"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -716,58 +860,202 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <a href="#landing" class="footer-logo" aria-label="Purva Dobariya Logo"><span>PD</span></a>
-          <p class="footer-tagline">
-            Building intelligent software solutions through Python Development.
-          </p>
-        </div>
-        <div>
-          <div class="footer-socials">
-            <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" class="social-icon"
-              aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer"
-              class="social-icon" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:purvapatel470@gmail.com" class="social-icon" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
-        </div>
+  <!-- 11. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="footer-logo">
+          <span class="brand-badge">PD</span>
+          <span class="brand-name">Purva Dobariya</span>
+        </a>
+        <p class="footer-tagline">Building clean, scalable backend systems with Python, FastAPI, and PostgreSQL.</p>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Purva Dobariya. All Rights Reserved.</p>
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+      <div class="footer-right">
+        <div class="footer-socials">
+          <a href="https://github.com/purvadobariya" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/purvadobariya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:purvapatel470@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          <a href="tel:+919909113639" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
         </div>
+        <p class="footer-copyright">© 2026 Purva Dobariya. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Lightbox Viewer Overlay -->
-  <div class="lightbox" id="cert-lightbox" aria-hidden="true" role="dialog" aria-label="Certificate Image Viewer">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
-    <div class="lightbox-content">
-      <img src="" alt="Certificate" class="lightbox-image" id="lightbox-img">
-      <iframe src="" class="lightbox-pdf" id="lightbox-pdf" style="display: none; width: 80vw; height: 80vh; border: none; border-radius: 8px; background: white; max-width: 900px;"></iframe>
-      <h3 class="lightbox-title" id="lightbox-title">Certificate</h3>
+  <!-- Lightbox Viewer Modal for Certificates -->
+  <div class="lightbox-overlay" id="cert-lightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-modal">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+      <img src="" alt="Certificate" id="lightbox-img" class="lightbox-image">
+      <h4 class="lightbox-caption" id="lightbox-title"></h4>
     </div>
   </div>
 
-  <!-- Toast Notification Center -->
-  <div class="toast-container" id="toast-container"></div>
+  <!-- Interactive Resume Modal -->
+  <div class="resume-modal-overlay" id="resume-modal" aria-hidden="true" role="dialog">
+    <div class="resume-modal-window">
+      <div class="resume-modal-header">
+        <div class="rm-header-info">
+          <i class="fa-regular fa-file-pdf text-accent"></i>
+          <span>Purva_Dobariya_Resume.pdf</span>
+        </div>
+        <div class="rm-header-actions">
+          <button class="btn btn-primary btn-sm" id="btn-print-resume"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+          <button class="resume-modal-close-btn" id="resume-modal-close" aria-label="Close resume viewer">&times;</button>
+        </div>
+      </div>
 
-  <!-- JavaScript File -->
+      <div class="resume-print-content" id="resume-print-content">
+        <!-- Resume Header -->
+        <div class="res-header">
+          <h1 class="res-title-name">Purva Dobariya</h1>
+          <h2 class="res-title-role">Python Developer | Backend Developer</h2>
+          <div class="res-contact-bar">
+            <span><i class="fa-solid fa-phone"></i> +91 99091 13639</span>
+            <span><i class="fa-regular fa-envelope"></i> purvapatel470@gmail.com</span>
+            <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/purvadobariya</span>
+            <span><i class="fa-brands fa-github"></i> github.com/purvadobariya</span>
+            <span><i class="fa-solid fa-location-dot"></i> Rajkot, Gujarat</span>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="res-sec">
+          <h3 class="res-sec-title">Professional Summary</h3>
+          <p class="res-p">
+            Computer Engineering student and Python Developer with hands-on experience in backend development, REST API development, database management, and SQL. Completed a three-month Python Developer internship at Prolix Technikos, working with FastAPI, PostgreSQL, backend architecture, debugging, and version control. Experienced in developing backend functionality, implementing authentication, CRUD operations, and integrating database-driven applications. Interested in building reliable and scalable backend systems.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="res-sec">
+          <h3 class="res-sec-title">Education</h3>
+          <div class="res-entry">
+            <div class="res-line-1">
+              <strong>B.H. Gardi College of Engineering & Technology (GTU)</strong>
+              <span>2024 – Present</span>
+            </div>
+            <div class="res-line-2">
+              <span>Bachelor of Engineering in Computer Engineering – CGPA: 7.87 / 10</span>
+              <span>Rajkot, Gujarat</span>
+            </div>
+          </div>
+          <div class="res-entry" style="margin-top: 6px;">
+            <div class="res-line-1">
+              <strong>Noble Engineering College</strong>
+              <span>2021 – 2024</span>
+            </div>
+            <div class="res-line-2">
+              <span>Diploma in Computer Engineering – CGPA: 7.83 / 10</span>
+              <span>Junagadh, Gujarat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="res-sec">
+          <h3 class="res-sec-title">Work Experience</h3>
+          <div class="res-entry">
+            <div class="res-line-1">
+              <strong>Python Developer Intern – Prolix Technikos</strong>
+              <span>20 Jul 2026 – 20 Oct 2026</span>
+            </div>
+            <div class="res-line-2">
+              <span>Rajkot, Gujarat</span>
+            </div>
+            <ul class="res-bullets">
+              <li>Developed and maintained backend API modules using Python and FastAPI, organizing application logic into routes, services, repositories, and Pydantic schemas.</li>
+              <li>Implemented database operations using PostgreSQL and SQL, working on data retrieval, insertion, updates, and debugging database-related issues.</li>
+              <li>Tested API endpoints through Swagger UI to verify request handling, responses, and backend functionality.</li>
+            </ul>
+          </div>
+          <div class="res-entry" style="margin-top: 8px;">
+            <div class="res-line-1">
+              <strong>Python Development Intern – Sparks to Ideas</strong>
+              <span>03 Jul 2026 – 17 Jul 2026</span>
+            </div>
+            <div class="res-line-2">
+              <span>Remote Internship</span>
+            </div>
+            <ul class="res-bullets">
+              <li>Completed a 15-day practical internship focused on Python programming and problem-solving.</li>
+              <li>Practised data structures, functions, object-oriented programming, and file handling through programming tasks.</li>
+              <li>Improved Python coding practices by debugging errors and developing structured solutions.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="res-sec">
+          <h3 class="res-sec-title">Projects</h3>
+          <div class="res-entry">
+            <div class="res-line-1">
+              <strong>Placement Preparation Management System (PrepSync)</strong>
+              <span>Ongoing</span>
+            </div>
+            <div class="res-line-2">
+              <em>Technologies: Python, FastAPI, PostgreSQL, Supabase, SQLAlchemy, JWT, Docker, Backblaze B2, React, TypeScript</em>
+            </div>
+            <ul class="res-bullets">
+              <li>Developing a full-stack platform to manage placement preparation, academic tasks, submissions, announcements, and student progress.</li>
+              <li>Built modular REST APIs using FastAPI with route, service, repository, and Pydantic schema layers; implemented JWT authentication and role-based access.</li>
+              <li>Developed modules for domain management, assignments, submissions, marks, feedback, notifications, and role-specific dashboards.</li>
+              <li>Integrated React frontend with backend APIs, Supabase PostgreSQL database, and Backblaze B2 for file storage.</li>
+            </ul>
+          </div>
+          <div class="res-entry" style="margin-top: 8px;">
+            <div class="res-line-1">
+              <strong>RaktSetu – Blood Donation Management System</strong>
+              <span>Live: raktsetu.site.je</span>
+            </div>
+            <div class="res-line-2">
+              <em>Technologies: PHP, MySQL, JavaScript, HTML, CSS, XAMPP, PHPMailer</em>
+            </div>
+            <ul class="res-bullets">
+              <li>Developed a full-stack blood donation management system for donor and recipient management.</li>
+              <li>Implemented authentication, donor registration, blood requests, donation history, and CRUD operations.</li>
+              <li>Built donor matching based on blood group and location and integrated email notifications using PHPMailer.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="res-sec">
+          <h3 class="res-sec-title">Technical Skills</h3>
+          <p class="res-p"><strong>Programming Languages:</strong> Python, SQL, JavaScript, TypeScript, PHP</p>
+          <p class="res-p"><strong>Backend Development:</strong> FastAPI, Flask, Django, REST APIs, JWT Authentication, CRUD Operations</p>
+          <p class="res-p"><strong>Databases:</strong> PostgreSQL, MySQL, Supabase, SQLAlchemy</p>
+          <p class="res-p"><strong>Tools & Technologies:</strong> Git, GitHub, Docker, Swagger UI, Alembic, Backblaze B2</p>
+          <p class="res-p"><strong>Core Concepts:</strong> OOP, SDLC, Database Management, Debugging, Version Control</p>
+        </div>
+
+        <!-- Certifications -->
+        <div class="res-sec">
+          <h3 class="res-sec-title">Certifications & Achievements</h3>
+          <p class="res-p"><strong>Microsoft Azure / Cloud Certificate</strong> – Microsoft (July 2026)</p>
+          <p class="res-p"><strong>Analytics with Python</strong> – Infosys Springboard</p>
+          <p class="res-p"><strong>Python Programming</strong> – Institute of Advanced Research, Gandhinagar (Jan 2025)</p>
+          <p class="res-p"><strong>PHP Training Program</strong> – Institute of Advanced Research, Gandhinagar (Sept 2024)</p>
+          <p class="res-p"><strong>Two-time GTU Representative</strong> – Women's Cricket (West Zone / All India Inter-University)</p>
+          <p class="res-p"><strong>Hackathon Participation</strong> – Rajkot IT Association (RITA)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll-To-Top Circular Progress Button -->
+  <button class="back-to-top-btn" id="scroll-top-btn" aria-label="Back to top">
+    <svg class="progress-ring" width="46" height="46">
+      <circle class="progress-ring-circle" stroke-width="2.5" fill="transparent" r="20" cx="23" cy="23" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Shelf -->
+  <div class="toast-shelf" id="toast-shelf"></div>
+
+  <!-- Main JavaScript File -->
   <script src="script.js"></script>
 </body>
 
