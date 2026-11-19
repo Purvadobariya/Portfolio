@@ -2,7 +2,6 @@
 
 > Modern, premium, and responsive personal developer portfolio showcasing backend engineering experience, REST APIs, projects, and credentials.
 
-![Portfolio Preview](certificate/profile_photo.jpeg)
 
 ## 🚀 About the Portfolio
 A modern, technology-focused developer portfolio built for **Purva Dobariya** — Python Developer & Backend Engineer.
@@ -26,7 +25,6 @@ A modern, technology-focused developer portfolio built for **Purva Dobariya** �
 - **Email**: [purvapatel470@gmail.com](mailto:purvapatel470@gmail.com)
 - **LinkedIn**: [linkedin.com/in/purvadobariya](https://linkedin.com/in/purvadobariya)
 - **GitHub**: [github.com/purvadobariya](https://github.com/purvadobariya)
-- **Phone**: +91 99091 13639
-
+  
 ---
 © 2026 Purva Dobariya. All rights reserved.
