@@ -1366,28 +1366,6 @@ img {
   font-family: var(--font-mono);
 }
 
-.project-media-banner {
-  margin: 16px 0 20px 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg-surface);
-  max-height: 280px;
-}
-
-.project-screenshot {
-  width: 100%;
-  height: 100%;
-  max-height: 280px;
-  object-fit: cover;
-  object-position: top;
-  transition: var(--trans-normal);
-}
-
-.project-regular-card:hover .project-screenshot {
-  transform: scale(1.02);
-}
-
 /* --- 11. EDUCATION SECTION --- */
 .education-grid {
   display: grid;
